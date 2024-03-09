@@ -10,6 +10,8 @@ import { useMediaQuery } from "react-responsive";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import { Analytics } from "@vercel/analytics/react";
+
 function FV(props) {
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: "(max-width: 500px)" });
@@ -28,6 +30,7 @@ function FV(props) {
     <>
       {isMobile && (
         <div className={cn(styles.root, props.className, "fv")}>
+          <Analytics />
           <img
             src="/assets/background-image.svg"
             alt=""
