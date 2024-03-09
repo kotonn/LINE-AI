@@ -16,8 +16,8 @@ function FV(props) {
 
   useEffect(() => {
     AOS.init({
-      duration: 500,
-      delay: 500,
+      duration: 1000,
+      delay: 1000,
     });
   }, []);
 

@@ -24,6 +24,7 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
+  background-color: #f1b669;
   z-index: -1000;
 }
 .flex_col {
@@ -85,7 +86,7 @@
 .subtitle {
   color: rgb(241, 182, 105);
   display: flex;
-  font: 400 18px/1 "Alata", Helvetica, Arial, serif;
+  font: 400 18px/1 "Noto Sans JP", Helvetica, Arial, serif;
   justify-content: center;
   letter-spacing: 1.8px;
   margin: 30px 0px 0px;
