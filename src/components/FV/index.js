@@ -15,6 +15,12 @@ function FV(props) {
   const isMobile = useMediaQuery({ query: "(max-width: 500px)" });
 
   useEffect(() => {
+    // ここでプリロードしたい画像のパスを指定
+    const backgroundImage = new Image();
+    backgroundImage.src = "/assets/background-image.svg";
+  }, []);
+
+  useEffect(() => {
     AOS.init({
       duration: 1000,
       delay: 1000,
