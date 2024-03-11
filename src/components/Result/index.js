@@ -130,6 +130,9 @@ function Result(props) {
     (item) => (item ? item.lastSelectedAnswer * 5 : 0) // nullチェックを追加
   );
 
+  // 各配列が同値であるかの検証
+  const allSameValues = dataValues.every((value) => value === dataValues[0]);
+
   //   最小値の格納されているインデックスの取得
   const minValueIndex = dataValues.length
     ? dataValues.indexOf(Math.min(...dataValues)) + 1 // 配列は0から始まるので、人が読みやすいように1を足す
@@ -320,69 +323,69 @@ function Result(props) {
                 <div className={styles.wrapper31}>
                   {totalValue === 100
                     ? message[0]
-                    : totalValue === 75
+                    : totalValue === 75 && allSameValues
                     ? message[1]
-                    : totalValue === 50
+                    : totalValue === 50 && allSameValues
                     ? message[2]
-                    : totalValue === 25
+                    : totalValue === 25 && allSameValues
                     ? message[3]
-                    : totalValue >= 76 &&
+                    : totalValue >= 75 &&
                       totalValue <= 99 &&
                       minValueIndex === 1
                     ? message[4]
-                    : totalValue >= 76 &&
+                    : totalValue >= 75 &&
                       totalValue <= 99 &&
                       minValueIndex === 2
                     ? message[5]
-                    : totalValue >= 76 &&
+                    : totalValue >= 75 &&
                       totalValue <= 99 &&
                       minValueIndex === 3
                     ? message[7]
-                    : totalValue >= 76 &&
+                    : totalValue >= 75 &&
                       totalValue <= 99 &&
                       minValueIndex === 4
                     ? message[8]
-                    : totalValue >= 76 &&
+                    : totalValue >= 75 &&
                       totalValue <= 99 &&
                       minValueIndex === 5
                     ? message[6]
-                    : totalValue >= 51 &&
+                    : totalValue >= 50 &&
                       totalValue <= 74 &&
                       minValueIndex === 1
                     ? message[9]
-                    : totalValue >= 51 &&
+                    : totalValue >= 50 &&
                       totalValue <= 74 &&
                       minValueIndex === 2
                     ? message[10]
-                    : totalValue >= 51 &&
+                    : totalValue >= 50 &&
                       totalValue <= 74 &&
                       minValueIndex === 3
                     ? message[12]
-                    : totalValue >= 51 &&
+                    : totalValue >= 50 &&
                       totalValue <= 74 &&
                       minValueIndex === 4
                     ? message[13]
-                    : totalValue >= 51 &&
+                    : totalValue >= 50 &&
                       totalValue <= 74 &&
                       minValueIndex === 5
                     ? message[11]
-                    : totalValue >= 26 &&
+                    : totalValue >= 25 &&
                       totalValue <= 49 &&
                       minValueIndex === 1
                     ? message[14]
-                    : totalValue >= 26 &&
+                    : totalValue >= 25 &&
                       totalValue <= 49 &&
                       minValueIndex === 2
                     ? message[15]
-                    : totalValue >= 26 &&
+                    : totalValue >= 25 &&
                       totalValue <= 49 &&
                       minValueIndex === 3
                     ? message[17]
-                    : totalValue >= 26 &&
+                    : totalValue >= 25 &&
                       totalValue <= 49 &&
                       minValueIndex === 4
                     ? message[18]
-                    : totalValue >= 26 &&
+                    : totalValue >= 25 &&
                       totalValue <= 49 &&
                       minValueIndex === 5
                     ? message[16]
@@ -401,95 +404,95 @@ function Result(props) {
                 onClick={() => {
                   let linkIndex = 0;
                   if (totalValue === 100) linkIndex = 0;
-                  else if (totalValue === 75) linkIndex = 1;
-                  else if (totalValue === 50) linkIndex = 2;
-                  else if (totalValue === 25) linkIndex = 3;
+                  else if (totalValue === 75 && allSameValues) linkIndex = 1;
+                  else if (totalValue === 50 && allSameValues) linkIndex = 2;
+                  else if (totalValue === 25 && allSameValues) linkIndex = 3;
                   else if (
-                    totalValue >= 76 &&
+                    totalValue >= 75 &&
                     totalValue <= 99 &&
                     minValueIndex === 1
                   )
                     linkIndex = 4;
                   else if (
-                    totalValue >= 76 &&
+                    totalValue >= 75 &&
                     totalValue <= 99 &&
                     minValueIndex === 2
                   )
                     linkIndex = 5;
                   else if (
-                    totalValue >= 76 &&
+                    totalValue >= 75 &&
                     totalValue <= 99 &&
                     minValueIndex === 3
                   )
                     linkIndex = 7;
                   else if (
-                    totalValue >= 76 &&
+                    totalValue >= 75 &&
                     totalValue <= 99 &&
                     minValueIndex === 4
                   )
                     linkIndex = 8;
                   else if (
-                    totalValue >= 76 &&
+                    totalValue >= 75 &&
                     totalValue <= 99 &&
                     minValueIndex === 5
                   )
                     linkIndex = 6;
                   else if (
-                    totalValue >= 51 &&
+                    totalValue >= 50 &&
                     totalValue <= 74 &&
                     minValueIndex === 1
                   )
                     linkIndex = 4;
                   else if (
-                    totalValue >= 51 &&
+                    totalValue >= 50 &&
                     totalValue <= 74 &&
                     minValueIndex === 2
                   )
                     linkIndex = 5;
                   else if (
-                    totalValue >= 51 &&
+                    totalValue >= 50 &&
                     totalValue <= 74 &&
                     minValueIndex === 3
                   )
                     linkIndex = 7;
                   else if (
-                    totalValue >= 51 &&
+                    totalValue >= 50 &&
                     totalValue <= 74 &&
                     minValueIndex === 4
                   )
                     linkIndex = 8;
                   else if (
-                    totalValue >= 51 &&
+                    totalValue >= 50 &&
                     totalValue <= 74 &&
                     minValueIndex === 5
                   )
                     linkIndex = 6;
                   else if (
-                    totalValue >= 26 &&
+                    totalValue >= 25 &&
                     totalValue <= 49 &&
                     minValueIndex === 1
                   )
                     linkIndex = 4;
                   else if (
-                    totalValue >= 26 &&
+                    totalValue >= 25 &&
                     totalValue <= 49 &&
                     minValueIndex === 2
                   )
                     linkIndex = 5;
                   else if (
-                    totalValue >= 26 &&
+                    totalValue >= 25 &&
                     totalValue <= 49 &&
                     minValueIndex === 3
                   )
                     linkIndex = 7;
                   else if (
-                    totalValue >= 26 &&
+                    totalValue >= 25 &&
                     totalValue <= 49 &&
                     minValueIndex === 4
                   )
                     linkIndex = 8;
                   else if (
-                    totalValue >= 26 &&
+                    totalValue >= 25 &&
                     totalValue <= 49 &&
                     minValueIndex === 5
                   )
